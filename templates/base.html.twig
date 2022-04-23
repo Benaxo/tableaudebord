@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Tableau de bord - CSSM{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+            {#{{ encore_entry_link_tags('app') }}#}
+        {% endblock %}
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
+
+        <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="header">
+            <a href="{{ path('acceuil') }}">
+                <img src="/uploads/logo.jpg" class="logo" alt="logo">
+            </a>
+
+            <div class="info-compte">Connecté en tant que Nom, Prénom | Emploi |</div><br>
+            <a href="" class="deconnexion">Déconnexion</a><br>
+
+            <div class="menu"> 
+                <a href="">Tâches</a>|<a href="">Administrations</a>|<a href="">Exploitation</a>|<a href="">Desk</a>
+            </div>
+        </div>
+        <div class="taches">
+            {% block content %}
+            {% endblock %}
+            
+        </div>
+
+        <div class="tableau">
+            <a href="">Tâches en cours</a>|<a href="">Tâches effectuées</a>
+            Tableau
+        </div>
+
+
+    </body>
+</html>
